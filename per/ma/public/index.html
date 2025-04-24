@@ -31,25 +31,29 @@
       width: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: white;
-      left: 0;
-      bottom: -4px;
-      transition: 0.3s ease;
-    }
-    nav a:hover::after {
-      width: 100%;
+
+    .welcome-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  background-clip: text; /* <-- Add this line */
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px rgba(0, 198, 255, 0.4), 0 0 10px rgba(0, 114, 255, 0.4);
+      }
+      to {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.8), 0 0 20px rgba(0, 114, 255, 0.8);
+      }
     }
 
     .container-wrapper {
@@ -111,13 +115,9 @@
 </head>
 <body>
   <nav>
-    <a href="/index.html">Home</a>
-    <a href="/2024-25/dashboard24.html">2024-25</a>
-    <a href="/2025-26/dashboard25.html">2025-26</a>
-    <a href="/2026-27/dashboard26.html">2026-27</a>
-    <a href="/2027-28/dashboard27.html">2027-28</a>
-    <a href="/2028-29/dashboard28.html">2028-29</a>
-    <a href="/2029-30/dashboard29.html">2029-30</a>
+    <div class="welcome-text">
+      <i class="fas fa-smile-beam"></i> Welcome to <span>Raji's Dashboard</span>
+    </div>
   </nav>
 
   <div class="container-wrapper">
@@ -128,7 +128,7 @@
         <h2>2025-26</h2></div></div>
         <div onclick="location.href='/2026-27/dashboard26.html'"><div class="card"><i class="fas fa-calendar-week"></i>
         <h2>2026-27</h2></div></div>
-        <div onclick="location.href='/2027-28/dashboard27.html'"><div class="card year27"><i class="fas fa-calendar-day"></i>
+        <div onclick="location.href='/2027-28/dashboard27.html'"><div class="card"><i class="fas fa-calendar-day"></i>
         <h2>2027-28</h2></div></div>
         <div onclick="location.href='/2028-29/dashboard28.html'"><div class="card"><i class="fas fa-calendar-plus"></i>
         <h2>2028-29</h2></div></div>
