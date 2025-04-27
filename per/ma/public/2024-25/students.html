@@ -11,36 +11,35 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f0f2f5;
       color: #333;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
-
     nav {
       background: #000;
       padding: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      width: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
     }
-
-    nav a {
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
       color: white;
-      margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
       position: relative;
+      font-size: 1rem;
     }
-
-    nav a::after {
+    .nav-links a::after {
       content: '';
       position: absolute;
       width: 0;
@@ -50,20 +49,29 @@
       bottom: -4px;
       transition: 0.3s ease;
     }
-
-    nav a:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
     }
-
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
     .container-wrapper {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       padding: 2rem;
     }
-
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -71,7 +79,6 @@
       width: 90%;
       max-width: 1200px;
     }
-
     .card {
       background: #e1c1c1;
       border-radius: 16px;
@@ -82,52 +89,81 @@
       cursor: pointer;
       overflow: hidden;
     }
-
     .card:hover {
       transform: translateY(-10px) scale(1.02);
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
-
     .card h2 {
       margin-bottom: 1rem;
       color: #222;
       font-size: 1.8rem;
     }
-
     .card i {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #4a4a4a;
     }
-
     .card p {
       text-align: justify;
       font-size: 1rem;
       line-height: 1.6;
     }
 
+    /* --- Responsive styles for mobile --- */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #000;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        text-align: right;
+        border-radius: 5px;
+        padding: 1rem;
+      }
+      .nav-links a {
+        margin: 0.5rem 0;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-active {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
+
   <nav>
-    <a href="/index.html">Home</a>
-    <a href="/2024-25/dashboard24.html">2024-25</a>
-    <a href="/2025-26/dashboard25.html">2025-26</a>
-    <a href="/2026-27/dashboard26.html">2026-27</a>
-    <a href="/2027-28/dashboard27.html">2027-28</a>
-    <a href="/2028-29/dashboard28.html">2028-29</a>
-    <a href="/2029-30/dashboard29.html">2029-30</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/index.html">Home</a>
+      <a href="/2024-25/dashboard24.html">2024-25</a>
+      <a href="/2025-26/dashboard25.html">2025-26</a>
+      <a href="/2026-27/dashboard26.html">2026-27</a>
+      <a href="/2027-28/dashboard27.html">2027-28</a>
+      <a href="/2028-29/dashboard28.html">2028-29</a>
+      <a href="/2029-30/dashboard29.html">2029-30</a>
+    </div>
   </nav>
 
   <div class="container-wrapper">
     <div class="container">
+      
       <div class="card">
         <h2>House Activities</h2>
         <p>
-          The house activities like recitation, story narration, solo dance were conducted to develop confidence in students.
+          House activities like recitation, story narration, and solo dance were conducted to build student confidence.
           Themes like compassion, acceptance, and resilience were chosen for story narration and recitation to align with the vision.
-          Activities like sharing affirmations and Geeta Saar were also conducted.
-          Quiz club was introduced to foster intellectual curiosity.
+          Activities like sharing affirmations and Geeta Saar were also organized.
+          A Quiz Club was introduced to foster intellectual curiosity.
           Cultural activities like softboard decoration and celebrations such as Janmashtami, Dussehra, and Holi helped students connect with Indian traditions.
         </p>
       </div>
@@ -135,14 +171,21 @@
       <div class="card">
         <h2>Club Activities</h2>
         <p>
-          In the Eco club, students participated in Vanmahotsav, skits for traffic awareness, and energy conservation.
-          Sessions on exercise and mental health were organized, along with activities on rainy season precautions, healthy diets, and first aid.
-          Students also visited IDBA and old age homes.
-          They created PowerPoint presentations and watched parent-made videos for salad making.
-          Senior students demonstrated eco-friendly color making, while younger ones took part in singing and skits to promote environmental responsibility.
+          In the Eco Club, students participated in Van Mahotsav, skits for traffic awareness, and energy conservation initiatives.
+          Sessions on exercise and mental health were organized, along with activities on rainy season precautions, healthy diets, and first aid awareness.
+          Students visited IDBA and old age homes to spread compassion.
+          They created PowerPoint presentations and watched videos prepared by parents for salad making.
+          Senior students demonstrated eco-friendly color-making methods, while younger students participated in singing and skits to promote environmental responsibility.
         </p>
       </div>
+
     </div>
   </div>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
 </body>
 </html>

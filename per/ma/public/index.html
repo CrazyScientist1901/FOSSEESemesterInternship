@@ -15,106 +15,163 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f0f2f5;
       color: #333;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
     nav {
-      background: #000;
+      background: #000000;
       padding: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      position: absolute;
-      top: 0;
-      width: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .welcome-text {
-  font-size: 1.6rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  background-clip: text; /* <-- Add this line */
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  animation: glow 1.5s ease-in-out infinite alternate;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px rgba(0, 198, 255, 0.4), 0 0 10px rgba(0, 114, 255, 0.4);
-      }
-      to {
-        text-shadow: 0 0 10px rgba(0, 198, 255, 0.8), 0 0 20px rgba(0, 114, 255, 0.8);
-      }
-    }
-
-    .container-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 100%;
-      padding-top: 4rem; /* to avoid nav overlap */
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(3, 250px);
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .card {
-      background: linear-gradient(135deg, #e3ffe7, #d9e7ff);
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      padding: 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
       position: relative;
-      overflow: hidden;
     }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    .nav-links {
+      display: flex;
+      gap: 1rem;
     }
-
-    .card h2 {
-      margin-bottom: 0.5rem;
-      color: #222;
-      font-size: 1.5rem;
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      font-size: 1rem;
     }
-
-    .card i {
-      font-size: 2rem;
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: white;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .top-section {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .activities, .subject {
+      border-radius: 10px;
+      padding: 1.5rem;
+      flex: 1 1 45%;
+      background: #F5F5DC;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      min-width: 280px;
+    }
+    .activities:hover, .subject:hover {
+      transform: translateY(-5px);
+    }
+    .activities h2, .subject h2 {
       margin-bottom: 1rem;
-      color: #4a4a4a;
+      color: #000000;
+    }
+    .activities div {
+      margin: 0.75rem 0;
+      padding: 1rem;
+      background: #FFE5B4;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .activities div:hover {
+      background-color: #c6ccff;
+      transform: scale(1.02);
+    }
+    .evidence {
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 90%;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      margin-top: 1.5rem;
+    }
+    .evidence:hover {
+      transform: translateY(-5px);
+    }
+    .evidence h2 {
+      color: #000000;
+      margin-bottom: 1rem;
+    }
+    .evidence a {
+      text-decoration: none;
+      color: #0072ff;
+      font-weight: bold;
+    }
+    .evidence a:hover {
+      text-decoration: underline;
     }
 
-    .year27 {
-      grid-column: 1 / 2;
-    }
-
-    @media (max-width: 800px) {
-      .container {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* --- Responsive styles for mobile --- */
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .activities, .subject {
+        width: 100%;
+      }
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #000000;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        text-align: right;
+        border-radius: 5px;
         padding: 1rem;
+      }
+      .nav-links a {
+        margin: 0.5rem 0;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-active {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
   <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="welcome-text">
       <i class="fas fa-smile-beam"></i> Welcome to <span>Raji's Dashboard</span>
     </div>
@@ -122,19 +179,19 @@
 
   <div class="container-wrapper">
     <div class="container">
-        <div onclick="location.href='/2024-25/dashboard24.html'"><div class="card"><i class="fas fa-calendar-alt"></i>
-        <h2>2024-25</h2></div></div>
-        <div onclick="location.href='/2025-26/dashboard25.html'"><div class="card"><i class="fas fa-calendar-check"></i>
-        <h2>2025-26</h2></div></div>
-        <div onclick="location.href='/2026-27/dashboard26.html'"><div class="card"><i class="fas fa-calendar-week"></i>
-        <h2>2026-27</h2></div></div>
-        <div onclick="location.href='/2027-28/dashboard27.html'"><div class="card"><i class="fas fa-calendar-day"></i>
-        <h2>2027-28</h2></div></div>
-        <div onclick="location.href='/2028-29/dashboard28.html'"><div class="card"><i class="fas fa-calendar-plus"></i>
-        <h2>2028-29</h2></div></div>
-        <div onclick="location.href='/2029-30/dashboard29.html'"><div class="card"><i class="fas fa-calendar"></i>
-        <h2>2029-30</h2></div></div>
+      <div onclick="location.href='/2024-25/dashboard24.html'"><div class="card"><i class="fas fa-calendar-alt"></i><h2>2024-25</h2></div></div>
+      <div onclick="location.href='/2025-26/dashboard25.html'"><div class="card"><i class="fas fa-calendar-check"></i><h2>2025-26</h2></div></div>
+      <div onclick="location.href='/2026-27/dashboard26.html'"><div class="card"><i class="fas fa-calendar-week"></i><h2>2026-27</h2></div></div>
+      <div onclick="location.href='/2027-28/dashboard27.html'"><div class="card"><i class="fas fa-calendar-day"></i><h2>2027-28</h2></div></div>
+      <div onclick="location.href='/2028-29/dashboard28.html'"><div class="card"><i class="fas fa-calendar-plus"></i><h2>2028-29</h2></div></div>
+      <div onclick="location.href='/2029-30/dashboard29.html'"><div class="card"><i class="fas fa-calendar"></i><h2>2029-30</h2></div></div>
     </div>
   </div>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
 </body>
 </html>
