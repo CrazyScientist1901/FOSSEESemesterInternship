@@ -109,46 +109,67 @@
       transform: scale(1.02);
     }
     .evidence {
-      border-radius: 10px;
-      padding: 1.5rem;
-      width: 90%;
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-      margin-top: 1.5rem;
-    }
+    border-radius: 10px;
+    padding: 2rem;
+    width: 90%;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-top: 1.5rem;
+  }
     .evidence:hover {
       transform: translateY(-5px);
     }
     .evidence h2 {
       color: #000000;
       margin-bottom: 1rem;
+      font-size: 2rem;
     }
+    .evidence p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1rem;
+    }
+
     .evidence a {
-      text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #0072ff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
     }
     .evidence a:hover {
-      text-decoration: underline;
+      background-color: #005bd1;
     }
-    .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+    .impacts-title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+  }
 
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 0 4px;
-}
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
+  .gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
 
     /* --- Responsive styles for mobile --- */
     @media (max-width: 768px) {
@@ -229,27 +250,33 @@
         </a>
       </p>
       <p>
-        Impacts
-        <div class="row">
-          <div class="column">
-            <img src="/2024-25/IMG-20250429-WA0001.jpg">
-            <img src="/2024-25/IMG-20250429-WA0002.jpg">
-            <img src="/2024-25/IMG-20250429-WA0003.jpg">
-            <img src="/2024-25/IMG-20250429-WA0004.jpg">
-            <img src="/2024-25/IMG-20250429-WA0005.jpg">
-            <img  src="/2024-25/IMG-20250429-WA0006.jpg">
+        <div class="evidence">
+          <h2>Evidence</h2>
+        
+          <div class="achievements">
+            <p><strong>Achievements</strong></p>
+            <a href="https://read.bookcreator.com/L3p09VMiRPMmNKeERZImhkCpQXx1/bJCkJ39JTcCHxqYv6hCoLQ" target="_blank">
+              Visit Page
+            </a>
           </div>
-          <div class="column">            
-            <img src="/2024-25/IMG-20250429-WA0007.jpg">
-            <img src="/2024-25/IMG-20250429-WA0008.jpg">
-            <img src="/2024-25/IMG-20250429-WA0009.jpg">
-            <img src="/2024-25/IMG-20250429-WA0011.jpg">
-            <img src="/2024-25/IMG-20250429-WA0013.jpg">
+        
+          <div class="impacts">
+            <p class="impacts-title">Impacts</p>
+            <div class="gallery">
+              <img src="/2024-25/IMG-20250429-WA0001.jpg">
+              <img src="/2024-25/IMG-20250429-WA0002.jpg">
+              <img src="/2024-25/IMG-20250429-WA0003.jpg">
+              <img src="/2024-25/IMG-20250429-WA0004.jpg">
+              <img src="/2024-25/IMG-20250429-WA0005.jpg">
+              <img src="/2024-25/IMG-20250429-WA0006.jpg">
+              <img src="/2024-25/IMG-20250429-WA0007.jpg">
+              <img src="/2024-25/IMG-20250429-WA0008.jpg">
+              <img src="/2024-25/IMG-20250429-WA0009.jpg">
+              <img src="/2024-25/IMG-20250429-WA0011.jpg">
+              <img src="/2024-25/IMG-20250429-WA0013.jpg">
+            </div>
           </div>
-      </div>
-      </p>
-    </div>
-  </div>
+        </div>
 
   <script>
     function toggleMenu() {
