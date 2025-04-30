@@ -146,12 +146,15 @@
     .evidence a:hover {
       background-color: #005bd1;
     }
-    .impacts-title {
+    .title {
     margin-top: 2rem;
     font-size: 2.5rem;
     font-weight: bold;
     color: #000;
     text-align: left;
+    font-style: oblique; 
+    text-underline-position:below;
+    list-style-type:circle;
   }
 
   .gallery {
@@ -203,6 +206,38 @@
         display: flex;
       }
     }
+    .lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+  }
+
+  .lightbox-overlay:after {
+    content: "✕";
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -246,26 +281,26 @@
           <h2>Evidence</h2>
         
           <div class="achievements">
-            <p><strong>Achievements</strong></p>
+            <p class="title"><strong>Achievements</strong></p>
             <a href="https://read.bookcreator.com/L3p09VMiRPMmNKeERZImhkCpQXx1/bJCkJ39JTcCHxqYv6hCoLQ" target="_blank">
               Visit Page
             </a>
           </div>
         
           <div class="impacts">
-            <p class="impacts-title">Impacts</p>
+            <p class="title">Impacts</p>
             <div class="gallery">
-              <img src="/2024-25/IMG-20250429-WA0001.jpg">
-              <img src="/2024-25/IMG-20250429-WA0002.jpg">
-              <img src="/2024-25/IMG-20250429-WA0003.jpg">
-              <img src="/2024-25/IMG-20250429-WA0007.jpg">              
-              <img src="/2024-25/IMG-20250429-WA0006.jpg">
-              <img src="/2024-25/IMG-20250429-WA0005.jpg">
-              <img src="/2024-25/IMG-20250429-WA0004.jpg">
-              <img src="/2024-25/IMG-20250429-WA0008.jpg">
-              <img src="/2024-25/IMG-20250429-WA0009.jpg">
-              <img src="/2024-25/IMG-20250429-WA0011.jpg">
-              <img src="/2024-25/IMG-20250429-WA0013.jpg">
+              <img src="/2024-25/IMG-20250429-WA0001.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0002.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0003.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0007.jpg" onclick="expandImage(this.src)">              
+              <img src="/2024-25/IMG-20250429-WA0006.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0005.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0004.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0008.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0009.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0011.jpg" onclick="expandImage(this.src)">
+              <img src="/2024-25/IMG-20250429-WA0013.jpg" onclick="expandImage(this.src)">
             </div>
           </div>
         </div>
@@ -275,6 +310,17 @@
       const navLinks = document.getElementById('navLinks');
       navLinks.classList.toggle('nav-active');
     }
+
+    function expandImage(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
   </script>
 
 </body>
