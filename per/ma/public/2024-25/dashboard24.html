@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard Welcome Page</title>
   <style>
     * {
@@ -49,8 +49,8 @@
       width: 100%;
     }
     .nav-links a.active {
-        color: #ffd700; /* Gold color for active link */
-      }
+        color: #ffd700;
+    }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -86,14 +86,14 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       min-width: 280px;
-      }
-      .activities:hover, .subject:hover {
-        transform: translateY(-5px);
-      }
-      .activities h2, .subject h2 {
-        margin-bottom: 1rem;
-        color: #000000;
-      }
+    }
+    .activities:hover, .subject:hover {
+      transform: translateY(-5px);
+    }
+    .activities h2, .subject h2 {
+      margin-bottom: 1rem;
+      color: #000000;
+    }
     .activities div {
       margin: 0.75rem 0;
       padding: 1rem;
@@ -109,15 +109,15 @@
       transform: scale(1.02);
     }
     .evidence {
-    border-radius: 10px;
-    padding: 2rem;
-    width: 90%;
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    margin-top: 1.5rem;
-  }
+      border-radius: 10px;
+      padding: 2rem;
+      width: 90%;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      margin-top: 1.5rem;
+    }
     .evidence:hover {
       transform: translateY(-5px);
     }
@@ -127,55 +127,50 @@
       font-size: 2rem;
     }
     .evidence p {
-    font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 1rem;
     }
-
     .evidence a {
       display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #0072ff;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #0072ff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
     .evidence a:hover {
       background-color: #005bd1;
     }
     .title {
-    margin-top: 2rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #000;
-    text-align: left;
-    font-style: oblique; 
-    text-decoration-line:underline;
-    list-style-type:circle;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-
-    /* --- Responsive styles for mobile --- */
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000;
+      text-align: left;
+      font-style: oblique;
+      text-decoration-line: underline;
+      list-style-type: circle;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
     @media (max-width: 768px) {
       .top-section {
         flex-direction: column;
@@ -207,37 +202,36 @@
       }
     }
     .lightbox-overlay {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .lightbox-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-  }
-
-  .lightbox-overlay.active {
-    display: flex;
-  }
-
-  .lightbox-overlay:after {
-    content: "✕";
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -277,34 +271,41 @@
       </div>
     </div>
 
-        <div class="evidence">
-          <h2>Evidence</h2>
-        
-          <div class="achievements">
-            <p class="title"><strong>Achievements</strong>
-            <a href="https://read.bookcreator.com/L3p09VMiRPMmNKeERZImhkCpQXx1/bJCkJ39JTcCHxqYv6hCoLQ" target="_blank">
-              Visit Page
-            </a>
-          </p>
-          </div>
-        
-          <div class="impacts">
-            <p class="title">Impacts</p>
-            <div class="gallery">
-              <img src="/2024-25/IMG-20250429-WA0001.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0002.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0003.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0007.jpg" onclick="expandImage(this.src)">              
-              <img src="/2024-25/IMG-20250429-WA0006.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0005.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0004.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0008.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0009.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0011.jpg" onclick="expandImage(this.src)">
-              <img src="/2024-25/IMG-20250429-WA0013.jpg" onclick="expandImage(this.src)">
-            </div>
-          </div>
+    <div class="evidence">
+      <h2>Evidence</h2>
+
+      <div class="achievements">
+        <p class="title"><strong>Achievements</strong>
+        <a href="https://read.bookcreator.com/L3p09VMiRPMmNKeERZImhkCpQXx1/bJCkJ39JTcCHxqYv6hCoLQ" target="_blank">
+          Visit Page
+        </a>
+        </p>
+      </div>
+
+      <div class="impacts">
+        <p class="title">Impacts</p>
+        <div class="gallery">
+          <img src="/2024-25/IMG-20250429-WA0001.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0002.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0003.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0007.jpg" onclick="expandImage(this.src)">              
+          <img src="/2024-25/IMG-20250429-WA0006.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0005.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0004.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0008.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0009.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0011.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/IMG-20250429-WA0013.jpg" onclick="expandImage(this.src)">
+          <img src="/2024-25/WhatsApp Image 2025-04-30 at 11.36.57_e02e9fa7.jpg" onclick="expandImage(this.src)">
         </div>
+
+        <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+          <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+          <img id="lightbox-img" src="" alt="Expanded View" onclick="event.stopPropagation()">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -313,15 +314,15 @@
     }
 
     function expandImage(src) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightbox.classList.add('active');
-  }
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-  }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
   </script>
 
 </body>
