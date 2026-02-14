@@ -1,6 +1,5 @@
 # Mathematics Animations for Class 10 📐✨
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Blender](https://img.shields.io/badge/Blender-4.5.3-orange)](https://www.blender.org/)
 [![Synfig](https://img.shields.io/badge/Synfig-1.4.5-blue)](https://www.synfig.org/)
 
@@ -45,5 +44,4 @@ The following materials were consulted **for curriculum guidance only** (no copy
 *VIT Bhopal University*  
 
 This project was developed as part of the **FOSSEE Semester Long Autumn Internship 2025**.
-> **FOSSEE** (Free and Open Source Software for Education) promotes the use of FOSS tools in academia.
 
